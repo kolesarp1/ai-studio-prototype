@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Studio Prototype</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>AI Studio</h1>
+        <p>Powered by Grok 4 - Prototype v1.0</p>
+    </header>
+    
+    <main>
+        <!-- Project Creation Section -->
+        <section id="project-creation">
+            <h2>Create New Project</h2>
+            <form id="new-project-form">
+                <label for="project-name">Project Name:</label>
+                <input type="text" id="project-name" required>
+                
+                <label for="project-desc">Description:</label>
+                <textarea id="project-desc" required></textarea>
+                
+                <button type="submit">Create Project</button>
+            </form>
+        </section>
+        
+        <!-- Project Dashboard -->
+        <section id="project-dashboard" class="hidden">
+            <h2>Project Dashboard</h2>
+            <div id="project-info"></div>
+            
+            <!-- Document Upload -->
+            <div id="upload-section">
+                <h3>Upload Documents</h3>
+                <input type="file" id="file-upload" multiple>
+                <button id="upload-btn">Upload</button>
+                <ul id="uploaded-files"></ul>
+                <div id="context-summary" class="hidden">
+                    <h4>Extracted Context Summary</h4>
+                    <p id="summary-text"></p>
+                </div>
+            </div>
+            
+            <!-- Presentation Generation -->
+            <div id="presentation-section">
+                <h3>Generate Presentation</h3>
+                <label for="prompt">Prompt (e.g., "Create 10-slide deck on project roadmap"):</label>
+                <textarea id="prompt" required></textarea>
+                
+                <label for="format">Output Format:</label>
+                <select id="format">
+                    <option value="pptx">PPTX</option>
+                    <option value="google-slides">Google Slides</option>
+                </select>
+                
+                <button id="generate-btn">Generate</button>
+                
+                <div id="preview" class="hidden">
+                    <h4>Presentation Preview</h4>
+                    <div id="slides-container"></div>
+                    <a id="download-link" href="#" download>Download Presentation</a>
+                </div>
+            </div>
+            
+            <!-- Iterative Editing -->
+            <div id="editing-section" class="hidden">
+                <h3>Iterative Editing</h3>
+                <label for="edit-prompt">AI Edit Prompt (e.g., "Add bar chart to slide 3"):</label>
+                <textarea id="edit-prompt"></textarea>
+                <button id="submit-edit">Submit to AI</button>
+                <div id="edit-history"></div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 xAI. Prototype based on PRD.</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
